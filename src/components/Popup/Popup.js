@@ -53,14 +53,14 @@ export default function Popup() {
                     </Link>
                     .
                   </p>
-                  <p>&nbsp;</p>
-                  <p>
+                  {/* <p>&nbsp;</p> */}
+                  {/* <p>
                     Visit my full portfolio at{' '}
                     <Link to="/" style={{ textDecoration: 'underline ' }}>
                       Rossi Studio
                     </Link>
                     .
-                  </p>
+                  </p> */}
                 </Body>
               </StyledText>
             </Row>
