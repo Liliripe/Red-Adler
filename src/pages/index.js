@@ -6,59 +6,6 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
 import SEO from '../helpers/seo'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import Featured from '../components/Product/Featured'
-import New from '../components/Product/New'
-import Product from '../components/Product'
-import Banner from '../components/Banner'
-import Spacer from '../components/Spacer'
-
-export const ProductWrap = styled.div`
-  width: 100%;
-  padding: 28vh 0 25vh;
-  background-color: ${(props) => props.theme.colors.white};
-`
-const StyledContainer = styled(Container)`
-  width: ${(props) => props.theme.sizes.maxWidthMedium};
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-
-  @media screen and (max-width: ${props => props.theme.responsive.large}) {
-    width: 100%;
-  }
-`
-const StyledRow = styled(Row)`
-  width: 100%;
-`
-const Title = styled.h5`
-  text-align: center;
-  margin: 0 0 16vh;
-  font-family: ${props => props.theme.fonts.sans};
-  font-size: 1.2rem;
-`
-const StyledLink = styled(Link)`
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  padding: 9vh 0 0;
-  font-size: ${props => props.theme.fontSize.xsmall};
-  font-weight: 600;
-  position: relative;
-  width: 130px;
-
-  ::after {
-    content: ' ';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: ${props => props.theme.colors.black};
-    transition: all ease-in-out 0.3s;
-  }
-`
 
 const IndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark
@@ -74,33 +21,7 @@ const IndexPage = ({ data }) => {
   return (
     <div className="scroll" ref={scrollRef}>
       <SEO title="Home" />
-      <Header />
-      <Hero />
-      <Featured />
-      <New />
-      <ProductWrap data-scroll data-scroll-speed="1" data-scroll-position="top">
-        <Title>Our must-haves</Title>
-        <StyledContainer fluid>
-          <StyledRow>
-            {edges.map(({ node }) => {
-              const { id, frontmatter } = node
-              const { cover, path, title, date } = frontmatter
-              return (
-                <Product
-                  key={id}
-                  cover={cover.childImageSharp.fluid}
-                  path={path}
-                  title={title}
-                  date={date}
-                />
-              )
-            })}
-          </StyledRow>
-        </StyledContainer>
-        <StyledLink to="/">All our products</StyledLink>
-      </ProductWrap>
-      <Banner />
-      <Spacer />
+      test
     </div>
   )
 }
